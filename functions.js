@@ -13,7 +13,7 @@ const order = (clients, property) => {
     return clients.sort((a, b) => {
         if (a[property]  < b[property]) {
             return -1;
-        } else if (a[property]  < b[property]) {
+        } else if (a[property] > b[property]) {
             return 1;
         } else {
             return 0;
@@ -23,8 +23,8 @@ const order = (clients, property) => {
 
 //total function
 const total = (clients) => {
-    return clients.reduce((accmulator, client) => {
-        return accumlator + client.balance; 
+    return clients.reduce((accumulator, client) => {
+        return accumulator + client.balance; 
     }, 0);
 };
 
@@ -38,7 +38,7 @@ const info = (index) => {
 //search function
 const search = (query) => {
     const lowerQuery = query.toLowerCase();
-    return client.filter(client => 
+    return clients.filter(client => 
         client.name.toLowerCase().includes(lowerQuery)
     );
-};
+}; 
